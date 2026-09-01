@@ -4,8 +4,10 @@ import { User } from "./User";
 import { Company } from "./Company";
 import { Map } from "./Map";
 
-
 const map = new Map('map');
-map.addUserMarker(new User());
-map.addCompanyMarker(new Company());
+const user = new User();
+const company = new Company();
+
+map.addMarker(user.location);
+map.addMarker(company.location);
 
