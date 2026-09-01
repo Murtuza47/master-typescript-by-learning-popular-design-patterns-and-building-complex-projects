@@ -8,6 +8,6 @@ const map = new Map('map');
 const user = new User();
 const company = new Company();
 
-map.addMarker(user.location);
-map.addMarker(company.location);
+map.addMarker(user);
+map.addMarker(company);
 
