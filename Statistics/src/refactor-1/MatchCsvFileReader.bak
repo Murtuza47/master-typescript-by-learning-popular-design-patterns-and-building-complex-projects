@@ -1,10 +1,10 @@
 import { convertDateStringToDate } from "./utils";
 import { MatchResult } from "./MatchResult";
-import { CsvReader } from "./CsvReader";
+import { CsvFileReader } from "./CsvFileReader";
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
 
-export class MatchCsvFileReader extends CsvReader<MatchData> {
+export class MatchCsvFileReader extends CsvFileReader<MatchData> {
   mapRow(row: string[]): MatchData {
     return [
       convertDateStringToDate(row[0]),
