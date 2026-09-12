@@ -8,13 +8,19 @@ const parsedMatches = matches.split("\n").map(row => row.split(","));
 console.log(parsedMatches);
 
 let manUnitedWins = 0;
+enum MatchResult { 
+  HomeWin = "H",
+  AwayWin = "A",
+  Draw = "D"
+}
+
 
 for (let match of parsedMatches) {
-  if (match[1] === "Man United" && match[5] === "H") {
+  if (match[1] === "Man United" && match[5] === MatchResult.HomeWin) {
     manUnitedWins++;
   }
 
-  if (match[2] === "Man United" && match[5] === "A") {
+  if (match[2] === "Man United" && match[5] === MatchResult.AwayWin) {
     manUnitedWins++;
   }
 }
